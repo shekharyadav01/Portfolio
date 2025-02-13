@@ -423,3 +423,14 @@ body {
     height: 1200px; /* Adjust this height based on the form length */
     border: none;
 }
+
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px; /* Add padding for spacing */
+    min-height: 100vh; /* Ensure the hero section fills the viewport */
+    color: #fff; /* White text to contrast the dark background */
+    display: flex;
+    justify-content: space-between; /* Space out content */
+    align-items: center;
+}
