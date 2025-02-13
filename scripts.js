@@ -115,3 +115,26 @@ function sendMail(event) {
     // Open the mailto link
     window.location.href = mailtoLink;
 }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const entries = document.querySelectorAll(".entry");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+
+        entries.forEach((entry) => observer.observe(entry));
+    });
+
+
+
+
+
