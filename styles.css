@@ -1,0 +1,438 @@
+/* General */
+body {
+    background-color: #121212;
+    color: #fff;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: #ffffff;
+    padding: 5px 15px; /* Adds more padding for spacing between items */
+    margin: 0 10px; /* Adds horizontal space between items */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff5722; /* Change text color on hover */
+    transform: scale(1.1); /* Slightly enlarge the item */
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, #d84b20, #b14202);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%; /* Full underline on hover */
+}
+
+.navbar-nav {
+    gap: 20px; /* Adds additional spacing between navbar items */
+}
+
+
+
+.section {
+    padding: 50px 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    height: 100vh;
+    padding-top: 70px;
+}
+
+/* Profile Photo */
+.profile-img {
+    width: 300px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease; /* Smooth scaling */
+    transform-origin: center;
+}
+
+.profile-img:hover {
+    transform: scale(1.2); /* Enlarge on hover */
+}
+
+
+.scroll-effect {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+}
+
+.social-icons a {
+    display: inline-block; /* Ensures proper alignment */
+    margin-right: 15px; /* Space between icons */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icon {
+    width: 40px; /* Set icon size */
+    height: 40px;
+    object-fit: cover; /* Maintain image aspect ratio */
+    border-radius: 50%; /* Make them circular */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover animation */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Slight zoom effect */
+    filter: brightness(1.2); /* Brightens the icon on hover */
+}
+
+
+
+/* Typing Effect */
+.designation-container {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* Text alignment */
+p {
+    text-align: justify;
+}
+
+
+/* Education Section Animation */
+.entry {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px; /* Add space between entries */
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateX(-20px); /* Slide in from the left */
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out; /* Smooth animation */
+}
+
+.entry:hover {
+    transform: scale(1.02); /* Slightly enlarge the entry on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Add a shadow on hover */
+}
+
+/* Trigger animation on scroll */
+.entry.visible {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Reset position */
+}
+
+/* Logo Animation */
+.logo img {
+    width: 100%; /* Logo should fill its container */
+    height: 100%; /* Logo height matches the container */
+    object-fit: contain; /* Prevent stretching or cropping */
+    transition: transform 0.3s ease; /* Smooth scaling */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Enlarge logo slightly on hover */
+}
+
+/* Entry Text Animation */
+.entry h3, .entry p, .entry ul {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.entry:hover h3, .entry:hover p, .entry:hover ul {
+    color: #fff; /* Highlight text on hover */
+    transform: translateY(-3px); /* Subtle lift effect */
+}
+
+/* Section Heading */
+.section h2 {
+    font-size: 2rem; /* Section heading size */
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section h2::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(to right, #e52d27, #b31217); /* Cool gradient underline */
+    transition: width 0.4s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.section h2:hover::after {
+    width: 100%; /* Full-width underline on hover */
+}
+
+
+
+/* Experience Section */
+
+.btn-outline-light {
+    border-color: white; /* White border */
+    color: white; /* White text */
+    transition: 0.3s ease; /* Smooth hover transition */
+}
+
+.btn-outline-light:hover {
+    background-color: white; /* White background */
+    color: black; /* Black text */
+    text-decoration: none; /* Remove underline */
+}
+.entry .btn {
+    margin-top: 10px; /* Add spacing between button and content */
+}
+
+.entry .logo img {
+    background-color: white; /* Set a white background */
+    border-radius: 10px; /* Slightly rounded corners */
+    padding: 10px; /* Add some spacing inside the background */
+    width: 60px; /* Consistent width for logos */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    margin-right: 15px; /* Add space between the logo and text */
+}
+
+
+/* Projects Section */
+.unique-projects-section {
+    padding-top: 20px;
+}
+
+.projects-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.project-entry {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.project-entry:last-child {
+    border-bottom: none;
+}
+
+.project-details-left {
+    flex: 3;
+    margin-right: 20px;
+}
+
+.project-details-right {
+    flex: 2;
+    text-align: right;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-details {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.project-details li {
+    margin-bottom: 8px;
+}
+
+.project-btn {
+    color: #fff;
+    border-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.project-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.github-link {
+    margin-top: 20px;
+}
+
+.github-btn {
+    color: #fff;
+    border-color: #fff;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.github-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+
+
+
+/* Skills Section */
+
+/* Skill category layout */
+.technologies-category {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 columns, responsive */
+    gap: 20px; /* Spacing between skill items */
+    margin-bottom: 40px; /* Spacing between categories */
+}
+
+/* Individual skill item */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Skill meter container */
+.skill-meter {
+    width: 100%;
+    background-color: #f0f0f0; /* Light grey background for contrast */
+    height: 16px; /* Bar height slightly increased */
+    border-radius: 12px; /* Smooth rounded corners */
+    margin-top: 10px; /* Spacing between text and meter */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+}
+
+/* Skill bar with gradient */
+.skill-bar {
+    width: 0%; /* Initial state for animation */
+    height: 100%;
+    background: linear-gradient(90deg, #CB356B, #BD3F32); /* Gradient bar */
+    border-radius: 12px; /* Rounded corners match container */
+    transition: width 1.5s ease-out; /* Smooth animation effect */
+}
+
+/* Skill name */
+.skill-name h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff9f9; /* Neutral text color */
+}
+
+
+
+
+
+/* Ceritificates */
+
+.certification-item {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease; /* Smooth scaling and background effect */
+    background: #000000; /* Default background */
+}
+
+.certification-item:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    background: linear-gradient(135deg, #000000, #434343); /* Gradient background on hover */
+    border: none; /* Remove border on hover for a cleaner look */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a shadow for emphasis */
+}
+
+.certification-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Smooth scaling effect for the logo */
+}
+
+.certification-item:hover .certification-logo {
+    transform: scale(1.1); /* Slightly grow the logo when the card is hovered */
+}
+
+.certificate-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color change for the text */
+}
+
+.certification-item:hover .certificate-name {
+    color: #ffffff; /* Change text color to white on hover */
+}
+
+.view-certificate {
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    color: #fff;
+    background: linear-gradient(to right, #000000, #434343); /* Initial gradient */
+    background-size: 200% auto; /* Makes the background larger for the animation */
+    transition: background-position 0.4s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.view-certificate:hover {
+    background-position: right center; /* Moves the gradient to the right */
+    color: #ffffff; /* Ensure text stays visible */
+}
+
+.certificate-logo img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+    margin-right: 15px;
+    background-color: white;
+}
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Contact Section */
+.google-form-container {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.google-form-container iframe {
+    width: 100%;
+    height: 1200px; /* Adjust this height based on the form length */
+    border: none;
+}
+
+
+.hero-section {
+    background-image: url('./Images/background-image.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px; /* Add padding for spacing */
+    min-height: 100vh; /* Ensure the hero section fills the viewport */
+    color: #fff; /* White text to contrast the dark background */
+    display: flex;
+    justify-content: space-between; /* Space out content */
+    align-items: center;
+}
