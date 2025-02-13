@@ -4,9 +4,39 @@ body {
     color: #fff;
 }
 
-.navbar-brand {
-    font-weight: bold;
+.navbar-nav .nav-link {
+    position: relative;
+    color: #ffffff;
+    padding: 5px 15px; /* Adds more padding for spacing between items */
+    margin: 0 10px; /* Adds horizontal space between items */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
+
+.navbar-nav .nav-link:hover {
+    color: #ff5722; /* Change text color on hover */
+    transform: scale(1.1); /* Slightly enlarge the item */
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, #d84b20, #b14202);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%; /* Full underline on hover */
+}
+
+.navbar-nav {
+    gap: 20px; /* Adds additional spacing between navbar items */
+}
+
+
 
 .section {
     padding: 50px 0;
@@ -26,15 +56,19 @@ h2 {
     padding-top: 70px;
 }
 
-
 /* Profile Photo */
 .profile-img {
     width: 300px;
     height: auto;
     display: block;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth scaling and fading */
+    transition: transform 0.3s ease; /* Smooth scaling */
     transform-origin: center;
 }
+
+.profile-img:hover {
+    transform: scale(1.2); /* Enlarge on hover */
+}
+
 
 .scroll-effect {
     position: relative;
@@ -76,53 +110,71 @@ p {
 }
 
 
-/* Education Section */
-
+/* Education Section Animation */
 .entry {
     display: flex;
     align-items: flex-start;
     margin-bottom: 20px; /* Add space between entries */
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateX(-20px); /* Slide in from the left */
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out; /* Smooth animation */
 }
 
-.logo {
-    flex-shrink: 0; /* Prevent logo from resizing */
-    width: 60px; /* Keep the size consistent */
-    height: 60px; /* Same height as width for square logos */
-    margin-top: 5px; /* Slight margin to align with text */
-    margin-right: 15px;
+.entry:hover {
+    transform: scale(1.02); /* Slightly enlarge the entry on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Add a shadow on hover */
 }
 
+/* Trigger animation on scroll */
+.entry.visible {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Reset position */
+}
+
+/* Logo Animation */
 .logo img {
     width: 100%; /* Logo should fill its container */
     height: 100%; /* Logo height matches the container */
     object-fit: contain; /* Prevent stretching or cropping */
+    transition: transform 0.3s ease; /* Smooth scaling */
 }
 
-.entry h3 {
-    font-size: 1.25rem; /* Adjust college name font size */
-    margin-bottom: 5px; /* Add space below name */
+.logo img:hover {
+    transform: scale(1.1); /* Enlarge logo slightly on hover */
 }
 
-.entry p {
-    margin: 0;
-    color: #aaa; /* Subtle color for degree and dates */
+/* Entry Text Animation */
+.entry h3, .entry p, .entry ul {
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.entry ul {
-    padding-left: 20px; /* Indent bullet points */
-    list-style-type: disc; /* Bullet point style */
-    margin: 5px 0 0;
+.entry:hover h3, .entry:hover p, .entry:hover ul {
+    color: #fff; /* Highlight text on hover */
+    transform: translateY(-3px); /* Subtle lift effect */
 }
 
-.text-end {
-    text-align: right; /* Right-align duration */
-    font-size: 0.9rem; /* Make duration smaller */
-    color: #ccc; /* Muted text for duration */
-}
-
+/* Section Heading */
 .section h2 {
     font-size: 2rem; /* Section heading size */
     margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section h2::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(to right, #e52d27, #b31217); /* Cool gradient underline */
+    transition: width 0.4s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.section h2:hover::after {
+    width: 100%; /* Full-width underline on hover */
 }
 
 
@@ -283,7 +335,8 @@ p {
 
 
 
-/* Certification Section */
+
+/* Ceritificates */
 
 .certification-item {
     margin-bottom: 30px;
@@ -369,4 +422,17 @@ body {
     width: 100%;
     height: 1200px; /* Adjust this height based on the form length */
     border: none;
+}
+
+
+.hero-section {
+    background-image: url('./Images/background-image.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px; /* Add padding for spacing */
+    min-height: 100vh; /* Ensure the hero section fills the viewport */
+    color: #fff; /* White text to contrast the dark background */
+    display: flex;
+    justify-content: space-between; /* Space out content */
+    align-items: center;
 }
