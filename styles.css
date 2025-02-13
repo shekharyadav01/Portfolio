@@ -421,3 +421,15 @@ body {
     height: 1200px; 
     border: none;
 }
+
+
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px; 
+    min-height: 100vh;
+    color: #fff; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
