@@ -283,16 +283,22 @@ p {
 
 
 
-
-.certifications-container {
-    margin-top: 50px;
-}
+/* Certification Section */
 
 .certification-item {
     margin-bottom: 30px;
     padding: 15px;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease; /* Smooth scaling and background effect */
+    background: #000000; /* Default background */
+}
+
+.certification-item:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    background: linear-gradient(135deg, #000000, #434343); /* Gradient background on hover */
+    border: none; /* Remove border on hover for a cleaner look */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a shadow for emphasis */
 }
 
 .certification-logo {
@@ -301,28 +307,43 @@ p {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Smooth scaling effect for the logo */
+}
+
+.certification-item:hover .certification-logo {
+    transform: scale(1.1); /* Slightly grow the logo when the card is hovered */
 }
 
 .certificate-name {
     font-size: 1.2rem;
     font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color change for the text */
 }
 
-.certificate-publisher {
-    color: #dbdbdb; /* Change this color to your desired one */
+.certification-item:hover .certificate-name {
+    color: #ffffff; /* Change text color to white on hover */
 }
-
 
 .view-certificate {
     padding: 5px 15px;
     font-size: 0.9rem;
     border-radius: 20px;
+    color: #fff;
+    background: linear-gradient(to right, #000000, #434343); /* Initial gradient */
+    background-size: 200% auto; /* Makes the background larger for the animation */
+    transition: background-position 0.4s ease, color 0.3s ease; /* Smooth transition */
 }
+
+.view-certificate:hover {
+    background-position: right center; /* Moves the gradient to the right */
+    color: #ffffff; /* Ensure text stays visible */
+}
+
 .certificate-logo img {
-    max-width: 100px; /* Set a fixed width for the logos */
-    max-height: 100px; /* Set a fixed height for the logos */
-    object-fit: contain; /* Ensures the image fits within the box without distortion */
-    margin-right: 15px; /* Adds spacing between the logo and the text */
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+    margin-right: 15px;
     background-color: white;
 }
 
