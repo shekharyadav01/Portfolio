@@ -17,45 +17,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
 // Profile Photo
 
 // Get the scroll-effect container
 const scrollEffect = document.querySelector('.scroll-effect');
 
-// Add a scroll event listener
 window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY; // Get vertical scroll position
+    const scrollY = window.scrollY; 
 
-    // Calculate fade-out and scale based on scroll position
-    const opacityValue = Math.max(1 - scrollY / 500, 0); // Decreases opacity gradually
-    const scaleValue = Math.max(1 - scrollY / 2000, 0.8); // Scales down slightly
+    const opacityValue = Math.max(1 - scrollY / 500, 0); 
+    const scaleValue = Math.max(1 - scrollY / 2000, 0.8); 
 
-    // Apply styles dynamically
-    scrollEffect.style.opacity = opacityValue; // Control visibility
-    scrollEffect.style.transform = `scale(${scaleValue})`; // Control scaling
+    scrollEffect.style.opacity = opacityValue; 
+    scrollEffect.style.transform = `scale(${scaleValue})`; 
 });
 
 
-
-
-
-
-// Smooth scrolling with offset adjustment for fixed navbar
 document.querySelectorAll('.nav-link').forEach((link) => {
     link.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default link behavior
+        e.preventDefault(); 
 
-        const targetId = link.getAttribute('href').slice(1); // Get the target section ID
+        const targetId = link.getAttribute('href').slice(1); 
         const targetSection = document.getElementById(targetId);
 
         if (targetSection) {
-            const headerOffset = document.querySelector('.navbar').offsetHeight; // Navbar height
-            const elementPosition = targetSection.getBoundingClientRect().top; // Section position
+            const headerOffset = document.querySelector('.navbar').offsetHeight; 
+            const elementPosition = targetSection.getBoundingClientRect().top; 
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-            // Scroll with smooth behavior
             window.scrollTo({
                 top: offsetPosition,
                 behavior: 'smooth',
@@ -65,32 +54,26 @@ document.querySelectorAll('.nav-link').forEach((link) => {
 });
 
 
-
-
-// Skill Section 
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const skillsSection = document.querySelector("#skills");
     const skillBars = document.querySelectorAll(".skill-bar");
 
     const options = {
-        root: null, // Use the viewport
-        threshold: 0.2, // Trigger when 20% of the section is visible
+        root: null, 
+        threshold: 0.2, 
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Animate skill bars
+                
                 skillBars.forEach((bar) => {
                     const skillWidth = bar.style.getPropertyValue("--skill-width");
-                    bar.style.width = skillWidth; // Start animation
+                    bar.style.width = skillWidth; 
                 });
             } else {
-                // Reset skill bars when section is out of view
                 skillBars.forEach((bar) => {
-                    bar.style.width = "0%"; // Reset animation
+                    bar.style.width = "0%"; 
                 });
             }
         });
@@ -102,17 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function sendMail(event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Get the form values
+    event.preventDefault(); 
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    // Construct the mailto URL
     const mailtoLink = `mailto:shekharyad09@gmail.com?subject=Contact from ${name}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
 
-    // Open the mailto link
     window.location.href = mailtoLink;
 }
 
@@ -133,8 +112,3 @@ function sendMail(event) {
 
         entries.forEach((entry) => observer.observe(entry));
     });
-
-
-
-
-
